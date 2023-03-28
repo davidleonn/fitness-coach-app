@@ -8,6 +8,7 @@ export const Routing = () => {
     <Routes>
       <Route index element={<LandingPage />} />
       <Route path="login" element={<Login />} />
+      <Route path="*" element={<LandingPage />} />
     </Routes>
   );
 };

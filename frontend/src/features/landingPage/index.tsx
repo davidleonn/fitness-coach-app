@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-import Navbar from "@/features/navbar";
-import Home from "@/features/home";
-import Benefits from "@/features/benefits";
-import Classes from "@/features/classes";
-import Contact from "@/features/contact";
+import Navbar from "@/features/landingPage/navbar";
+import Home from "@/features/landingPage/home";
+import Benefits from "@/features/landingPage/benefits";
+import Classes from "@/features/landingPage/classes";
+import Contact from "@/features/landingPage/contact";
 import { SelectedPage } from "@/utils/types";
 import Footer from "@/features/footer";
 

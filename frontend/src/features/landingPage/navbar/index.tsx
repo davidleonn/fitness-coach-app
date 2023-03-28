@@ -4,9 +4,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedPage } from "@/utils/types";
-import useMediaQuery from "../hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import ActionButton from "@/utils/ActionButton";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   isTopOfPage: boolean;
@@ -19,6 +19,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navigate = useNavigate();
 
   const menuItems = (
     <>
@@ -62,14 +63,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   {menuItems}
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <ActionButton setSelectedPage={setSelectedPage}>
-                    <AnchorLink
-                      onClick={() => setSelectedPage(SelectedPage.Login)}
-                      href={`#${SelectedPage.Login}`}
-                    >
-                      Log In
-                    </AnchorLink>
-                  </ActionButton>
+                  <button
+                    type="button"
+                    className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                    onClick={() => navigate(`/login`)}
+                  >
+                    Log In
+                  </button>
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Become a member
                   </ActionButton>

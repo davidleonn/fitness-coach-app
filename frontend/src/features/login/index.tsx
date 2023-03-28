@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   email: string;
@@ -13,6 +14,8 @@ const Login = () => {
   const onSubmit: SubmitHandler<Props> = (data) => {
     console.log(data);
   };
+  const navigate = useNavigate();
+
   return (
     <div className="flex min-h-screen flex-col justify-center bg-gray-50">
       <div className="mx-auto w-full max-w-md">
@@ -64,6 +67,9 @@ const Login = () => {
             <button
               type="submit"
               className="w-full rounded-md bg-blue-600 py-2 px-4 text-sm text-white hover:bg-blue-700"
+              onClick={(e) => {
+                navigate(`/dashboard`);
+              }}
             >
               Submit
             </button>
