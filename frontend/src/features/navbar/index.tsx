@@ -6,6 +6,7 @@ import Link from "./Link";
 import { SelectedPage } from "@/utils/types";
 import useMediaQuery from "../hooks/useMediaQuery";
 import ActionButton from "@/utils/ActionButton";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
   isTopOfPage: boolean;
@@ -61,7 +62,14 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   {menuItems}
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <p>Sign In</p>
+                  <ActionButton setSelectedPage={setSelectedPage}>
+                    <AnchorLink
+                      onClick={() => setSelectedPage(SelectedPage.Login)}
+                      href={`#${SelectedPage.Login}`}
+                    >
+                      Log In
+                    </AnchorLink>
+                  </ActionButton>
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Become a member
                   </ActionButton>
