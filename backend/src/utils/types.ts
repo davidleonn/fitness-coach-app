@@ -1,6 +1,11 @@
-export type Trainning = "Push" | "Pull" | "Legs" | "Rest";
-export type Diet = "Great" | "Good" | "Ok" | "Bad";
+export type Diet = string;
 export type Cardio = number;
+
+export enum Trainning {
+  Push = "push",
+  Pull = "pull",
+  Legs = "legs",
+}
 
 export interface DiaryEntry {
   id: number;

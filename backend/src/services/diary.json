@@ -2,35 +2,35 @@
   {
     "id": 1,
     "date": "2023-27-03",
-    "trainning": "Legs",
+    "trainning": "legs",
     "diet": "Great",
     "cardio": 35
   },
   {
     "id": 2,
     "date": "2023-28-03",
-    "trainning": "Pull",
+    "trainning": "pull",
     "diet": "Good",
     "cardio": 50
   },
   {
     "id": 3,
     "date": "2023-29-03",
-    "trainning": "Push",
+    "trainning": "push",
     "diet": "Great",
     "cardio": 55
   },
   {
     "id": 4,
     "date": "2023-30-03",
-    "trainning": "Legs",
+    "trainning": "legs",
     "diet": "Ok",
     "cardio": 35
   },
   {
     "id": 5,
     "date": "2023-31-03",
-    "trainning": "Push",
+    "trainning": "push",
     "diet": "Bad",
     "cardio": 55
   }
