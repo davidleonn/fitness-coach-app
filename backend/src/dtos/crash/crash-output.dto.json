@@ -1,0 +1,12 @@
+{
+  "title": "CrashOutputDTO",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "message": { "type": "string" }
+  },
+  "additionalProperties": false,
+  "required": ["id", "type", "createdAt", "message"]
+}

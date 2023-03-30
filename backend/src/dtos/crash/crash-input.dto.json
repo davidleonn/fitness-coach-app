@@ -1,0 +1,10 @@
+{
+  "title": "CrashInputDTO",
+  "type": "object",
+  "properties": {
+    "type": { "type": "string" },
+    "message": { "type": "string" }
+  },
+  "additionalProperties": false,
+  "required": ["type", "message"]
+}
