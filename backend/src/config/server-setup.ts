@@ -1,15 +1,16 @@
 import express from "express";
-import loadOpenApi from "./load-open-api";
-import { pingRoutes } from "../routes/ping.routes";
-import router from "../routes/diaries";
+
+import diaryRouter from "../routes/diaries.routes";
 
 const server = express();
+server.use(express.json());
 
 export async function setupServer() {
-  await loadOpenApi(server, 3000);
-
-  server.use(pingRoutes);
-  server.use(router);
+  server.get("/ping", (_req, res) => {
+    console.log("Someone pinged");
+    res.send("pong");
+  });
+  server.use("/diaries", diaryRouter);
 
   return server;
 }
