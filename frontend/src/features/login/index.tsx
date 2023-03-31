@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type Props = {
   email: string;
@@ -14,68 +15,109 @@ const Login = () => {
   const onSubmit: SubmitHandler<Props> = (data) => {
     console.log(data);
   };
+
   const navigate = useNavigate();
 
   return (
-    <div className="flex min-h-screen flex-col justify-center bg-gray-50">
-      <div className="mx-auto w-full max-w-md">
-        <div className="text-center text-xl font-medium">something</div>
-        <div className="mt-2 text-center text-3xl font-bold text-gray-900">
-          another text
-        </div>
+    <div className="flex min-h-screen flex-col justify-center bg-gradient-to-br from-secondary-400 to-orange-300">
+      <div className="mx-auto w-full max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-gray mb-8 text-center text-5xl font-bold"
+        >
+          Welcome Back
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          className="text-gray text-center text-2xl font-medium"
+        >
+          Log in to your account
+        </motion.div>
       </div>
-      <div className="mx-auto w-full max-w-md border border-gray-300 bg-white p-8">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
+        className="mx-auto w-full max-w-3xl rounded-lg bg-white p-8 shadow-lg"
+      >
+        <motion.form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.5 }}
+        >
           <div>
-            <label htmlFor="" className="block text-sm font-bold text-gray-600">
+            <label
+              htmlFor="email"
+              className="block text-sm font-bold text-gray-600"
+            >
               Email
             </label>
-            <input
+            <motion.input
               {...register("email")}
+              id="email"
               type="text"
-              className="mt-1 w-full rounded border border-gray-300 p-2"
+              className="mt-1 w-full rounded border border-gray-300 p-2 focus:border-orange-500 focus:outline-none"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 2 }}
             />
           </div>
           <div>
-            <label htmlFor="" className="block text-sm font-bold text-gray-600">
+            <label
+              htmlFor="password"
+              className="block text-sm font-bold text-gray-600"
+            >
               Password
             </label>
-            <input
+            <motion.input
               {...register("password")}
-              type="text"
-              className="mt-1 w-full rounded border border-gray-300 p-2"
+              id="password"
+              type="password"
+              className="mt-1 w-full rounded border border-gray-300 p-2 focus:border-orange-500 focus:outline-none"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 2.2 }}
             />
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <input
+              <motion.input
                 {...register("remember")}
+                id="remember"
                 type="checkbox"
-                className="h-4 w-4 rounded text-blue-300"
+                className="h-4 w-4 rounded text-orange-500 focus:border-orange-500 focus:outline-none"
               />
-              <label htmlFor="" className="ml-2 text-sm text-gray-600">
+              <label htmlFor="remember" className="ml-2 text-sm text-gray-600">
                 Remember me
               </label>
             </div>
             <div>
-              <a href="" className="text-sm font-medium text-blue-500">
+              <a
+                href=""
+                className="text-sm font-medium text-orange-500 hover:underline"
+              >
                 Forgot password?
               </a>
             </div>
           </div>
           <div>
-            <button
+            <motion.button
               type="submit"
-              className="w-full rounded-md bg-blue-600 py-2 px-4 text-sm text-white hover:bg-blue-700"
-              onClick={(e) => {
-                navigate(`/dashboard`);
-              }}
+              className="w-full rounded-md bg-orange-500 py-2 px-4 text-sm text-white hover:bg-orange-600 focus:outline-none"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Submit
-            </button>
+              Log In
+            </motion.button>
           </div>
-        </form>
-      </div>
+        </motion.form>
+      </motion.div>
     </div>
   );
 };
