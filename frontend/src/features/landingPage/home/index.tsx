@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { SelectedPage } from "@/utils/types";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import ActionButton from "@/utils/ActionButton";
+import ActionButton from "@/utils/shared/buttons/ActionButton";
 import HomePageText from "@/assets/HomePageText.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";

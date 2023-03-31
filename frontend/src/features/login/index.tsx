@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+
 import { motion } from "framer-motion";
+import FormButton from "@/utils/shared/buttons/FormButton";
+import InputField from "@/utils/shared/components/Inputfield";
 
 type Props = {
   email: string;
@@ -15,9 +17,6 @@ const Login = () => {
   const onSubmit: SubmitHandler<Props> = (data) => {
     console.log(data);
   };
-
-  const navigate = useNavigate();
-
   return (
     <div className="flex min-h-screen flex-col justify-center bg-gradient-to-br from-secondary-400 to-orange-300">
       <div className="mx-auto w-full max-w-3xl">
@@ -51,40 +50,9 @@ const Login = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.5 }}
         >
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-bold text-gray-600"
-            >
-              Email
-            </label>
-            <motion.input
-              {...register("email")}
-              id="email"
-              type="text"
-              className="mt-1 w-full rounded border border-gray-300 p-2 focus:border-orange-500 focus:outline-none"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 2 }}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-bold text-gray-600"
-            >
-              Password
-            </label>
-            <motion.input
-              {...register("password")}
-              id="password"
-              type="password"
-              className="mt-1 w-full rounded border border-gray-300 p-2 focus:border-orange-500 focus:outline-none"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 2.2 }}
-            />
-          </div>
+          <InputField label="Email" name="email" type="email" />
+          <InputField label="Password" name="password" type="password" />
+
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <motion.input
@@ -99,27 +67,14 @@ const Login = () => {
             </div>
             <div>
               <a
-                href=""
+                href="/signup"
                 className="text-sm font-medium text-orange-500 hover:underline"
               >
-                Forgot password?
+                Register Now!
               </a>
             </div>
           </div>
-          <div>
-            <motion.button
-              type="submit"
-              className="w-full rounded-md bg-orange-500 py-2 px-4 text-sm text-white hover:bg-orange-600 focus:outline-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={(event) => {
-                event.preventDefault();
-                navigate(`/dashboard`);
-              }}
-            >
-              Log In
-            </motion.button>
-          </div>
+          <FormButton children={"Log In"} />
         </motion.form>
       </motion.div>
     </div>

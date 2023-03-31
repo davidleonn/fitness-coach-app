@@ -5,7 +5,7 @@ import Logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedPage } from "@/utils/types";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import ActionButton from "@/utils/ActionButton";
+import ActionButton from "@/utils/shared/buttons/ActionButton";
 import { useNavigate } from "react-router-dom";
 
 type Props = {

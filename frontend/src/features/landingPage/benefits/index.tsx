@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { BenefitType, SelectedPage } from "@/utils/types";
 import HText from "@/utils/HText";
 import Benefit from "./Benefit";
-import ActionButton from "@/utils/ActionButton";
+import ActionButton from "@/utils/shared/buttons/ActionButton";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 
 const benefits: Array<BenefitType> = [
