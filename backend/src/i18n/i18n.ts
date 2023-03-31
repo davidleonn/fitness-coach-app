@@ -23,8 +23,3 @@ export const loadI18n = (fastify: FastifyInstance) => {
 
   fastify.register(i18nextMiddleware.plugin, { i18next });
 };
-/*
-app.setErrorHandler(function (error, request, reply) {
-  reply.send(request.t("error"));
-});
-*/

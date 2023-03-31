@@ -14,7 +14,6 @@ export async function setupServer() {
   await loadOpenApi(server);
 
   server.register(pingRoutes);
-
   server.register(crashesRoutes);
 
   return server;
