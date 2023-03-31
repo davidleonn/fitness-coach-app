@@ -1,16 +1,21 @@
-import express from "express";
+import fastify from "fastify";
+import { loadOpenApi } from "./load-open-api";
+import { loadErrorHandler } from "./load-error-handler";
+import { loadSecurity } from "./load-security";
+import { loadI18n } from "../i18n";
+import { crashesRoutes, pingRoutes } from "../routes";
 
-import diaryRouter from "../routes/diaries.routes";
-
-const server = express();
-server.use(express.json());
+const server = fastify({ logger: true });
 
 export async function setupServer() {
-  server.get("/ping", (_req, res) => {
-    console.log("Someone pinged");
-    res.send("pong");
-  });
-  server.use("/diaries", diaryRouter);
+  loadSecurity(server);
+  loadI18n(server);
+  loadErrorHandler(server);
+  await loadOpenApi(server);
+
+  server.register(pingRoutes);
+
+  server.register(crashesRoutes);
 
   return server;
 }

@@ -1,0 +1,5 @@
+{
+  "not_found_error": "No se ha encontrado el objeto.",
+  "bad_status_error": "Error crítico del servidor.",
+  "uncontrolled_error": "Algo no salió como debía."
+}

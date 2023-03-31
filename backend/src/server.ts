@@ -1,13 +1,13 @@
+import { FastifyInstance } from "fastify";
+
 import { setupServer } from "./config/server-setup";
 
-const PORT = 3000;
-
 const start = async () => {
-  let server;
+  let server: FastifyInstance;
   try {
     server = await setupServer();
-    server.listen(PORT, () => {
-      console.log(`Server running on ${PORT} `);
+    await server.listen({
+      port: 7000,
     });
   } catch (err) {
     console.error(err);

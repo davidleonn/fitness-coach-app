@@ -2,43 +2,45 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "lint": "ts-standard",
-    "dev": "ts-node-dev src/index.ts",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "build": "tsc -p tsconfig.json",
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/server.ts",
-    "types:process": "for file in src/dtos/*/*.dto.json; do newFile=${file%.dto.json}; json2ts $file ${newFile}.d.ts; done;",
-    "tsc": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "types:process": "for file in src/dtos/*/*.dto.json; do newFile=${file%.dto.json}; json2ts$file ${newFile}.d.ts; done;",
     "create:env": "cp .env.dev .env",
     "migration:create": "prisma migrate dev --name base_migration",
     "database:update": "npx prisma db push",
-    "setup:prisma": "npm run migration:create && npm run database:update"
+    "setup:prisma": "npm run migration:create && npm run database:update",
+    "setup:backend": "npm run create:env && npm run types:process && npm run setup:prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/express": "^4.17.17",
-    "@types/node": "^18.15.11",
-    "prisma": "^4.12.0",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "ts-standard": "^12.0.2",
-    "typescript": "^5.0.2"
-  },
   "dependencies": {
-    "@prisma/client": "^4.12.0",
-    "express": "^4.18.2",
-    "json-schema-to-typescript": "^12.0.0",
-    "json-to-ts": "^1.7.0",
+    "@fastify/cors": "^8.2.0",
+    "@fastify/swagger": "^8.1.0",
+    "@fastify/swagger-ui": "^1.2.0",
+    "@prisma/client": "^4.6.0",
+    "fastify": "^4.9.2",
+    "i18next": "^22.0.6",
+    "i18next-fs-backend": "^2.0.0",
+    "i18next-http-middleware": "^3.2.1",
+    "js2ts": "^1.1.0",
+    "json-schema-to-typescript": "^11.0.2",
     "typescript-parser": "^2.6.1"
   },
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/ts-standard/eslintrc.json"
-    ]
+  "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.11.9",
+    "@types/nodemailer": "^6.4.6",
+    "jest": "^29.3.1",
+    "prisma": "^4.7.0",
+    "ts-jest": "^29.0.3",
+    "ts-node": "10.9.1",
+    "typescript": "^4.9.3"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"

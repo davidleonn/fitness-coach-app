@@ -1,6 +1,6 @@
-import { listCrash, listCrashes, newCrash } from "../services";
+import { newCrash, listCrashes, listCrash } from "../services";
+import { CrashInputDTO } from "../dtos/crash";
 import { Not_Found_Error } from "../errors";
-import * as CrashInputDTO from "../dtos/crash/crash-input.dto.json";
 
 export const postCrash = async (payload: CrashInputDTO) => {
   return await newCrash(payload);

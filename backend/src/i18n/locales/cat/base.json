@@ -1,0 +1,6 @@
+{
+  "not_found_error": "No s'ha trobat l'objecte.",
+  "bad_status_error": "Error crític del servidor.",
+  "uncontrolled_error": "Alguna cosa ha anat malament.",
+  "bad_payload_error": "Error en l'introducció dels camps necessaris per generar la sol·licitud"
+}

@@ -1,5 +1,4 @@
 import { Crash } from "@prisma/client";
-
 import { prisma } from "../config/prisma-instance";
 
 export const newCrash = async (crash: Omit<Crash, "id" | "createdAt">) => {

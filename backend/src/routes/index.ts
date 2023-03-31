@@ -1,2 +1,2 @@
-export * from "./diaries.routes";
+export * from "./ping.routes";
 export * from "./crashes.routes";
