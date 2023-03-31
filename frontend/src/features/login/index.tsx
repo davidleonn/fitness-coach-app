@@ -112,6 +112,10 @@ const Login = () => {
               className="w-full rounded-md bg-orange-500 py-2 px-4 text-sm text-white hover:bg-orange-600 focus:outline-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={(event) => {
+                event.preventDefault();
+                navigate(`/dashboard`);
+              }}
             >
               Log In
             </motion.button>
