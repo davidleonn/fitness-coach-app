@@ -19,6 +19,7 @@ model User {
   email     String    @unique
   name      String
   surname   String
+  password  String
   routines  Routine[] @relation("UserRoutines")
   diets     Diet[]    @relation("UserDiets")
 }
