@@ -82,22 +82,22 @@ export const userRoutes = (
       try {
         const myNewUser = await postUser(input);
         return reply.code(201).send(myNewUser);
-      } catch (e) {
-        console.log(e);
-        return reply.code(500).send(e);
+      } catch (err) {
+        console.log(err);
+        return reply.code(500).send(err);
       }
     }
   );
   fastify.get(
-    "/events",
+    "/users",
     { schema: getUsersSchema },
     async (request: FastifyRequest, reply: FastifyReply) => {
       try {
         const listUsers = await getUsers();
         return reply.code(200).send(listUsers);
-      } catch (e) {
-        console.log(e);
-        return reply.code(500).send(e);
+      } catch (err) {
+        console.log(err);
+        return reply.code(500).send(err);
       }
     }
   );
