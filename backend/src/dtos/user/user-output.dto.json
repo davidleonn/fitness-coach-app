@@ -6,18 +6,8 @@
     "name": { "type": "string" },
     "surname": { "type": "string" },
     "email": { "type": "string" },
-    "password": { "type": "string" },
-    "routines": { "type": "string" },
-    "diets": { "type": "string" }
+    "password": { "type": "string" }
   },
   "additionalProperties": false,
-  "required": [
-    "id",
-    "name",
-    "surname",
-    "email",
-    "password",
-    "routines",
-    "diets"
-  ]
+  "required": ["id", "name", "surname", "email", "password"]
 }
