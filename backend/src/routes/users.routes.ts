@@ -1,5 +1,19 @@
-import { FastifyInstance } from "fastify";
-import { userInputDTO, userOutputDTO, userUpdateDTO } from "../dtos/user";
+import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import {
+  UserInputDTO,
+  userInputDTO,
+  userOutputDTO,
+  UserOutputDTO,
+  userUpdateDTO,
+  UserUpdateDTO,
+} from "../dtos/user";
+import {
+  postUser,
+  getUsers,
+  getUser,
+  patchUser,
+  deleteUser,
+} from "../controllers";
 
 const postUsersSchema = {
   tags: ["Users"],
@@ -55,5 +69,88 @@ export const userRoutes = (
   _: any,
   done: () => void
 ) => {
+  fastify.post(
+    "/users",
+    { schema: postUsersSchema },
+    async (
+      request: FastifyRequest<{
+        Body: UserInputDTO;
+      }>,
+      reply: FastifyReply
+    ) => {
+      const input = request.body;
+      try {
+        const myNewUser = await postUser(input);
+        return reply.code(201).send(myNewUser);
+      } catch (e) {
+        console.log(e);
+        return reply.code(500).send(e);
+      }
+    }
+  );
+  fastify.get(
+    "/events",
+    { schema: getUsersSchema },
+    async (request: FastifyRequest, reply: FastifyReply) => {
+      try {
+        const listUsers = await getUsers();
+        return reply.code(200).send(listUsers);
+      } catch (e) {
+        console.log(e);
+        return reply.code(500).send(e);
+      }
+    }
+  );
+
+  fastify.get(
+    "/users/:id",
+    { schema: getUserSchema },
+    async (
+      request: FastifyRequest<{
+        Params: { id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { id } = request.params;
+
+      const user = await getUser(id);
+      return reply.code(200).send(user);
+    }
+  );
+
+  fastify.patch(
+    "/users/:id",
+    { schema: patchUsersSchema },
+    async (
+      request: FastifyRequest<{
+        Body: UserUpdateDTO;
+        Params: { id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const update = request.body;
+      const { id } = request.params;
+
+      const myUpdatedUser = await patchUser(update, id);
+      return reply.code(201).send(myUpdatedUser);
+    }
+  );
+
+  fastify.delete(
+    "/users/:id",
+    { schema: deleteUserSchema },
+    async (
+      request: FastifyRequest<{
+        Params: { id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { id } = request.params;
+
+      const user = await deleteUser(id);
+      return reply.code(200).send(user);
+    }
+  );
+
   done();
 };
