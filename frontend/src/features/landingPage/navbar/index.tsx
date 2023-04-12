@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
 
 import Logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedPage } from "@/utils/types";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import ActionButton from "@/utils/shared/buttons/ActionButton";
-import { useNavigate } from "react-router-dom";
 
 type Props = {
   isTopOfPage: boolean;
@@ -66,13 +65,16 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   <button
                     type="button"
                     className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
-                    onClick={() => navigate(`/login`)}
+                    onClick={() => navigate("/login")}
                   >
                     Log In
                   </button>
-                  <ActionButton setSelectedPage={setSelectedPage}>
+                  <button
+                    className="rounded-md bg-secondary-500 px-10 py-2 hover:bg-primary-500 hover:text-white"
+                    onClick={() => navigate("/register")}
+                  >
                     Become a member
-                  </ActionButton>
+                  </button>
                 </div>
               </div>
             ) : (

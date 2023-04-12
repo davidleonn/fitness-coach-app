@@ -6,7 +6,7 @@ import { User } from "../../utils/types";
 import FormButton from "@/utils/shared/buttons/FormButton";
 import InputField from "@/utils/shared/components/Inputfield";
 
-const Signup = () => {
+const Register = () => {
   const { handleSubmit } = useForm<User>();
 
   const onSubmit: SubmitHandler<User> = (data) => {
@@ -58,4 +58,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

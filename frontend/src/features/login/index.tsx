@@ -67,7 +67,7 @@ const Login = () => {
             </div>
             <div>
               <a
-                href="/signup"
+                href="/register"
                 className="text-sm font-medium text-orange-500 hover:underline"
               >
                 Register Now!
