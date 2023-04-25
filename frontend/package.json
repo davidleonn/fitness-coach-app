@@ -19,6 +19,7 @@
     "react-router-dom": "^6.9.0"
   },
   "devDependencies": {
+    "ts-node": "^10.9.1",
     "@types/node": "^18.15.5",
     "@types/react": "^18.0.28",
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
