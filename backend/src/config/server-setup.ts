@@ -3,12 +3,7 @@ import { loadOpenApi } from "./load-open-api";
 import { loadErrorHandler } from "./load-error-handler";
 import { loadSecurity } from "./load-security";
 import { loadI18n } from "../i18n";
-import {
-  crashesRoutes,
-  pingRoutes,
-  userRoutes,
-  clientsRoutes,
-} from "../routes";
+import { crashesRoutes, pingRoutes, userRoutes, clientRoutes } from "../routes";
 
 const server = fastify({ logger: true });
 
@@ -21,7 +16,7 @@ export async function setupServer() {
   server.register(pingRoutes);
   server.register(crashesRoutes);
   server.register(userRoutes);
-  server.register(clientsRoutes);
+  server.register(clientRoutes);
 
   return server;
 }

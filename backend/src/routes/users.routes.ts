@@ -24,7 +24,7 @@ const postUsersSchema = {
 };
 
 const getUsersSchema = {
-  tags: ["users"],
+  tags: ["Users"],
   response: {
     200: {
       type: "array",
@@ -34,7 +34,7 @@ const getUsersSchema = {
 };
 
 const getUserSchema = {
-  tags: ["users"],
+  tags: ["Users"],
   params: {
     id: { type: "string" },
   },
@@ -44,7 +44,7 @@ const getUserSchema = {
 };
 
 const patchUsersSchema = {
-  tags: ["users"],
+  tags: ["Users"],
   body: userUpdateDTO,
   params: {
     id: { type: "string" },
@@ -55,7 +55,7 @@ const patchUsersSchema = {
 };
 
 const deleteUserSchema = {
-  tags: ["users"],
+  tags: ["Users"],
   params: {
     id: { type: "string" },
   },
