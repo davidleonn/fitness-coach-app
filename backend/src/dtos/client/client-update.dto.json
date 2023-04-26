@@ -1,11 +1,16 @@
 {
-  "title": "UserUpdateDTO",
+  "title": "ClientUpdateDTO",
   "type": "object",
   "properties": {
     "name": { "type": "string" },
     "surname": { "type": "string" },
+    "age": { "type": "string" },
     "email": { "type": "string" },
-    "password": { "type": "string" }
+    "createdAt": { "type": "string" },
+    "objective": { "type": "string" },
+    "diet": { "type": "string" },
+    "routine": { "type": "string" },
+    "description": { "type": "string" }
   },
   "additionalProperties": false
 }
