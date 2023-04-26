@@ -1,8 +1,8 @@
-import userInputDTO from "./user-input.dto.json" assert { type: "json" };
-import userOutputDTO from "./user-output.dto.json" assert { type: "json" };
-import userUpdateDTO from "./user-update.dto.json" assert { type: "json" };
+import clientInputDTO from "./client-input.dto.json" assert { type: "json" };
+import clientOutputDTO from "./client-output.dto.json" assert { type: "json" };
+import clientUpdateDTO from "./client-update.dto.json" assert { type: "json" };
 
-export { userInputDTO, userOutputDTO, userUpdateDTO };
-export type { UserInputDTO } from "./user-input";
-export type { UserOutputDTO } from "./user-output";
-export type { UserUpdateDTO } from "./user-update";
+export { clientInputDTO, clientOutputDTO, clientUpdateDTO };
+export type { ClientInputDTO } from "./client-input";
+export type { ClientOutputDTO } from "./client-output";
+export type { ClientUpdateDTO } from "./client-update";

@@ -1,13 +1,16 @@
 {
-  "title": "UserOutputDTO",
+  "title": "ClientOutputDTO",
   "type": "object",
   "properties": {
-    "id": { "type": "string" },
     "name": { "type": "string" },
     "surname": { "type": "string" },
+    "age": { "type": "string" },
     "email": { "type": "string" },
-    "password": { "type": "string" }
+    "objective": { "type": "string" },
+    "diet": { "type": "string" },
+    "routine": { "type": "string" },
+    "description": { "type": "string" }
   },
   "additionalProperties": false,
-  "required": ["id", "name", "surname", "email", "password"]
+  "required": ["name", "surname", "age", "email", "diet", "routine"]
 }

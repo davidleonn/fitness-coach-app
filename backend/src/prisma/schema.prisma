@@ -43,6 +43,6 @@ model Client {
   createdAt   DateTime @default(now())
   objective   String?
   diet        String
-  Routine     String
+  routine     String
   description String?
 }
