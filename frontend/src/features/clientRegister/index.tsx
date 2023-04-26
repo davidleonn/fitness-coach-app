@@ -24,14 +24,6 @@ const ClientRegister = () => {
         >
           Create a new Client
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="text-gray text-center text-2xl font-medium"
-        >
-          Join our community
-        </motion.div>
       </div>
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -55,7 +47,7 @@ const ClientRegister = () => {
           <InputField label="Routine" name="routine" type="text" />
           <InputField label="Description" name="description" type="text" />
 
-          <FormButton children={"Sign In"} />
+          <FormButton children={"Create new client"} />
         </motion.form>
       </motion.div>
     </div>
