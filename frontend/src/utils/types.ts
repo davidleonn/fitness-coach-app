@@ -24,3 +24,15 @@ export interface User {
   surname: string;
   password: string;
 }
+export interface Client {
+  id?: string;
+  name: string;
+  surname: string;
+  age: number;
+  email: string;
+  createdAt?: string;
+  objective?: string;
+  diet: string;
+  routine: string;
+  description?: string;
+}

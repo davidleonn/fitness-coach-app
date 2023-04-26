@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 
 type Props = {
   label: string;
-  name: "name" | "email" | "surname" | "password";
+  name: string;
   type: string;
 };
 
 const InputField = ({ label, name, type }: Props) => {
-  const { register } = useForm<User>();
+  const { register } = useForm();
   return (
     <div>
       <label htmlFor={name} className="block text-sm font-bold text-gray-600">

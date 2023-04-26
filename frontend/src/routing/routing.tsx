@@ -10,8 +10,8 @@ export const Routing = () => {
     <Routes>
       <Route index element={<LandingPage />} />
       <Route path="login" element={<Login />} />
-      <Route path="register" element={<Register />} />
-      <Route path="new-client" element={<ClientRegister />} />
+      <Route path="signup" element={<Register />} />
+      <Route path="register" element={<ClientRegister />} />
       <Route path="*" element={<LandingPage />} />
     </Routes>
   );

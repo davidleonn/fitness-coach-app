@@ -22,7 +22,7 @@ const ClientRegister = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-gray mb-8 text-center text-5xl font-bold"
         >
-          Create a Client
+          Create a new Client
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -48,8 +48,12 @@ const ClientRegister = () => {
         >
           <InputField label="Name" name="name" type="text" />
           <InputField label="Surname" name="surname" type="text" />
+          <InputField label="Age" name="age" type="number" />
           <InputField label="Email" name="email" type="email" />
-          <InputField label="Password" name="password" type="password" />
+          <InputField label="Objective" name="objective" type="text" />
+          <InputField label="Diet" name="diet" type="text" />
+          <InputField label="Routine" name="routine" type="text" />
+          <InputField label="Description" name="description" type="text" />
 
           <FormButton children={"Sign In"} />
         </motion.form>
