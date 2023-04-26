@@ -33,3 +33,16 @@ model Diet {
   name     String  
   meals    String
 }
+
+model Client {
+  id          String   @id @default(uuid())
+  name        String
+  surname     String
+  age         Int
+  email       String
+  createdAt   DateTime @default(now())
+  objective   String?
+  diet        String
+  Routine     String
+  description String?
+}

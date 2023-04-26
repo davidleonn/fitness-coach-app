@@ -1,0 +1,12 @@
+{
+  "title": "UserInputDTO",
+  "type": "object",
+  "properties": {
+    "email": { "type": "string" },
+    "name": { "type": "string" },
+    "surname": { "type": "string" },
+    "password": { "type": "string" }
+  },
+  "additionalProperties": false,
+  "required": ["email", "name", "surname", "password"]
+}

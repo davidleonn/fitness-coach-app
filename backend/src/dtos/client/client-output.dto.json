@@ -1,0 +1,13 @@
+{
+  "title": "UserOutputDTO",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "surname": { "type": "string" },
+    "email": { "type": "string" },
+    "password": { "type": "string" }
+  },
+  "additionalProperties": false,
+  "required": ["id", "name", "surname", "email", "password"]
+}
