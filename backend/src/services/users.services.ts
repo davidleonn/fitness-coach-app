@@ -36,11 +36,11 @@ export const listUser = async (id: string) => {
 
 export const updateUser = async (user: UserUpdateDTO, id: string) => {
   try {
-    const updateEvent = await prisma.user.update({
+    const updateClient = await prisma.user.update({
       where: { id },
       data: user,
     });
-    return updateEvent;
+    return updateClient;
   } catch (err: any) {
     if (err.code === "P2025") {
       return null;
