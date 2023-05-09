@@ -1,0 +1,601 @@
+{
+  "openapi": "3.0.3",
+  "info": { "title": "repository explorer", "version": "1.0.0" },
+  "components": { "schemas": {} },
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": ["Ping"],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "title": "PingOutputDTO", "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crashes": {
+      "post": {
+        "tags": ["Crashes"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "CrashInputDTO",
+                "type": "object",
+                "properties": {
+                  "type": { "type": "string" },
+                  "message": { "type": "string" }
+                },
+                "additionalProperties": false,
+                "required": ["type", "message"]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "CrashOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "type": { "type": "string" },
+                    "createdAt": { "type": "string" },
+                    "message": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "type", "createdAt", "message"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Crashes"],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "CrashOutputDTO",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "type": { "type": "string" },
+                      "createdAt": { "type": "string" },
+                      "message": { "type": "string" }
+                    },
+                    "additionalProperties": false,
+                    "required": ["id", "type", "createdAt", "message"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crashes/{id}": {
+      "get": {
+        "tags": ["Crashes"],
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "CrashOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "type": { "type": "string" },
+                    "createdAt": { "type": "string" },
+                    "message": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "type", "createdAt", "message"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "UserInputDTO",
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "name": { "type": "string" },
+                  "surname": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "additionalProperties": false,
+                "required": ["email", "name", "surname", "password"]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "UserOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "name", "surname", "email", "password"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "UserOutputDTO",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "name": { "type": "string" },
+                      "surname": { "type": "string" },
+                      "email": { "type": "string" },
+                      "password": { "type": "string" }
+                    },
+                    "additionalProperties": false,
+                    "required": ["id", "name", "surname", "email", "password"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "UserOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "name", "surname", "email", "password"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "UserUpdateDTO",
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "surname": { "type": "string" },
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "UserOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "name", "surname", "email", "password"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "UserOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": ["id", "name", "surname", "email", "password"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients": {
+      "post": {
+        "tags": ["Clients"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "ClientInputDTO",
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "surname": { "type": "string" },
+                  "age": { "type": "string" },
+                  "email": { "type": "string" },
+                  "objective": { "type": "string" },
+                  "diet": { "type": "string" },
+                  "routine": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "surname",
+                  "age",
+                  "email",
+                  "diet",
+                  "routine"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "ClientOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "age": { "type": "string" },
+                    "email": { "type": "string" },
+                    "createdAt": { "type": "string" },
+                    "objective": { "type": "string" },
+                    "diet": { "type": "string" },
+                    "routine": { "type": "string" },
+                    "description": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "name",
+                    "surname",
+                    "age",
+                    "email",
+                    "createdAt",
+                    "objective",
+                    "diet",
+                    "routine",
+                    "description"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Clients"],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "ClientOutputDTO",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "name": { "type": "string" },
+                      "surname": { "type": "string" },
+                      "age": { "type": "string" },
+                      "email": { "type": "string" },
+                      "createdAt": { "type": "string" },
+                      "objective": { "type": "string" },
+                      "diet": { "type": "string" },
+                      "routine": { "type": "string" },
+                      "description": { "type": "string" }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "name",
+                      "surname",
+                      "age",
+                      "email",
+                      "createdAt",
+                      "objective",
+                      "diet",
+                      "routine",
+                      "description"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "tags": ["Clients"],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "ClientOutputDTO",
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "name": { "type": "string" },
+                      "surname": { "type": "string" },
+                      "age": { "type": "string" },
+                      "email": { "type": "string" },
+                      "createdAt": { "type": "string" },
+                      "objective": { "type": "string" },
+                      "diet": { "type": "string" },
+                      "routine": { "type": "string" },
+                      "description": { "type": "string" }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "name",
+                      "surname",
+                      "age",
+                      "email",
+                      "createdAt",
+                      "objective",
+                      "diet",
+                      "routine",
+                      "description"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Clients"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "ClientUpdateDTO",
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "surname": { "type": "string" },
+                  "age": { "type": "string" },
+                  "email": { "type": "string" },
+                  "createdAt": { "type": "string" },
+                  "objective": { "type": "string" },
+                  "diet": { "type": "string" },
+                  "routine": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "ClientOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "age": { "type": "string" },
+                    "email": { "type": "string" },
+                    "createdAt": { "type": "string" },
+                    "objective": { "type": "string" },
+                    "diet": { "type": "string" },
+                    "routine": { "type": "string" },
+                    "description": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "name",
+                    "surname",
+                    "age",
+                    "email",
+                    "createdAt",
+                    "objective",
+                    "diet",
+                    "routine",
+                    "description"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Clients"],
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "ClientOutputDTO",
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" },
+                    "surname": { "type": "string" },
+                    "age": { "type": "string" },
+                    "email": { "type": "string" },
+                    "createdAt": { "type": "string" },
+                    "objective": { "type": "string" },
+                    "diet": { "type": "string" },
+                    "routine": { "type": "string" },
+                    "description": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "name",
+                    "surname",
+                    "age",
+                    "email",
+                    "createdAt",
+                    "objective",
+                    "diet",
+                    "routine",
+                    "description"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
